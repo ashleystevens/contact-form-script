@@ -1,0 +1,49 @@
+<html>
+<head>
+
+<!-- CONTACT FORM -->
+<script type="text/javascript" src="contact.js" ></script>
+
+<style>
+/* CONTACT FORM */
+#contact-table {font-family: arial, sans-serif;font-size: 11px;margin: 10px 0 0 0;text-align: left;}
+#contact-table .contact-title {font-weight: bold;}
+#contact-table td {padding: 3px;}
+#contact-table #captcharesult {color: #F00;font-size: 10px;font-weight: bold;}
+/* INPUT RESIZE */
+#contact-table textarea {resize: none;}
+#contact-table input {}
+#contact-table .contact-button {}
+</style>
+
+</head>
+<body>
+
+<form id="contact-form" name="contact-form" method="POST" action="contact.php" onSubmit="return validateContactForm(this.id)">
+<table id="contact-table" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td class="contact-title">Your Name:</td><td><input type="text" name="name" alt="Name" /></td>
+</tr>
+<tr>
+	<td class="contact-title">Phone:</td><td><input type="text" name="phone" alt="Phone Number" /></td>
+</tr>
+<tr>
+	<td class="contact-title">Your Email:</td><td><input type="text" name="email" alt="Email" /></td>
+</tr>
+<tr>
+	<td class="contact-title" colspan="2" valign="top">Regarding:<br /><textarea name="regarding" alt="Regarding" rows="5" cols="25">Type your message here</textarea></td>
+</tr>
+<tr>
+	<td class="contact-title" valign="top">Code:</td><td><img id="imgcaptcha" alt="Code" src="createimage.php"><br /><a onclick=refreshImage(); href="javascript:void(0);">Refresh</a><br /><input type="text" name="txtcaptcha" alt="Captcha Code" /></td>
+</tr>
+<tr>
+	<td colspan="2" valign="top" id="captcharesult"></td>
+</tr>
+<tr>
+	<td colspan="2" valign="top"><input type="submit" class="contact-button" value="Contact Us" /></td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>
